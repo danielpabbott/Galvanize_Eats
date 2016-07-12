@@ -1,3 +1,12 @@
 .card-image img {
   height: 55vh;
 }
+
+.landing {
+  padding-top: 50px;
+}
+
+.navtext {
+  margin-left: 50px;
+  margin-right: 50px;
+}
