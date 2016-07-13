@@ -39,32 +39,31 @@ router.post('/newauthor', function(req, res, next) {
 	});
 });
 
-router.get('/:id/bookdelete', function(req, res, next) {
+router.get('/:id/deletebook', function(req, res, next) {
   knex('book').where({id: req.params.id}).del().then(function() {
   res.redirect('/books')
   })
 });
 
-router.get('/:id/authordelete', function(req, res, next) {
+router.get('/:id/deleteauthor', function(req, res, next) {
   knex('author').where({id: req.params.id}).del().then(function() {
   res.redirect('/authors')
   })
 });
 
-router.get('/:id/bookdetail', function(req, res, next) {
+router.get('/:id/detailbook', function(req, res, next) {
   return knex('book').select().where({id: req.params.id}).first().then(function (book) {
     res.render('bookdetail', {book: book})
   });
 });
 
-router.get('/:id/bookedit', function(req, res, next) {
+router.get('/:id/editbook', function(req, res, next) {
   return knex('book').select().where({id: req.params.id}).first().then(function (book) {
-    res.render('bookedit', {book: book})
+    res.render('editbook', {book: book})
   });
 });
 
-router.post('/:id/bookedit', function(req, res, next) {
-  console.log(req.params.id)
+router.post('/:id/editbook', function(req, res, next) {
   return knex('book').where({id: req.params.id}).update({
     title: req.body.title,
     genre: req.body.genre,
@@ -72,6 +71,23 @@ router.post('/:id/bookedit', function(req, res, next) {
     cover_url: req.body.cover_url
   }).then(function() {
     res.redirect('/books')
+  })
+})
+
+router.get('/:id/editauthor', function(req, res, next) {
+  return knex('author').select().where({id: req.params.id}).first().then(function (author) {
+    res.render('editauthor', {author: author})
+  });
+});
+
+router.post('/:id/editauthor', function(req, res, next) {
+  return knex('author').where({id: req.params.id}).update({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    biography: req.body.biography,
+    portrait_url: req.body.portrait_url
+  }).then(function() {
+    res.redirect('/authors')
   })
 })
 

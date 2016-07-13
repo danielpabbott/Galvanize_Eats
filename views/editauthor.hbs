@@ -1,0 +1,32 @@
+<h4 class="indent">Add an Author</h4>
+<div class="row">
+    <form class="col s12" action="/{{author.id}}/editauthor" method="post">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" class="validate" name="first_name" value="{{author.first_name}}">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate" name="last_name" value="{{author.last_name}}">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="biography" class="materialize-textarea" name="biography">{{author.biography}}</textarea>
+          <label for="biography">Biography</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="portrait_url" type="text" class="validate" name="portrait_url" value="{{author.portrait_url}}">
+          <label for="portrait_url">Portrait URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="submit" type="submit">
+        </div>
+      </div>
+    </form>
+  </div>
