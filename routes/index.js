@@ -13,4 +13,8 @@ router.get('/books', function(req, res, next) {
   })
 })
 
+router.get('/addbook', function(req, res, next) {
+  res.render('addbook');
+})
+
 module.exports = router;
