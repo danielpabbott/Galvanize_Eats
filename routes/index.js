@@ -17,4 +17,10 @@ router.get('/addbook', function(req, res, next) {
   res.render('addbook');
 })
 
+router.post('/post', function(req, res, next) {
+	return knex('book').insert(req.body).then(function() {
+		res.redirect('books');
+	});
+});
+
 module.exports = router;

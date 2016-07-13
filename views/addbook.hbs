@@ -1,26 +1,31 @@
 <h4 class="indent">Add a Book</h4>
 <div class="row">
-    <form class="col s12">
+    <form class="col s12" action="/post" method="post">
       <div class="row">
         <div class="input-field col s6">
-          <input id="title" type="text" class="validate">
+          <input id="title" type="text" class="validate" name="title">
           <label for="title">Title</label>
         </div>
         <div class="input-field col s6">
-          <input id="genre" type="text" class="validate">
+          <input id="genre" type="text" class="validate" name="genre">
           <label for="genre">Genre</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="description" class="materialize-textarea"></textarea>
+          <textarea id="description" class="materialize-textarea" name="description"></textarea>
           <label for="description">Description</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="cover_url" type="text" class="validate">
+          <input id="cover_url" type="text" class="validate" name="cover_url">
           <label for="cover_url">Cover URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="submit" type="submit">
         </div>
       </div>
     </form>
