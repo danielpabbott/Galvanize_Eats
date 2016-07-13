@@ -23,4 +23,16 @@ router.post('/post', function(req, res, next) {
 	});
 });
 
+router.get('/:id/bookdelete', function(req, res, next) {
+  knex('book').where({id: req.params.id}).del().then(function() {
+  res.redirect('/books')
+  })
+});
+
+router.get('/:id/bookdetail', function(req, res, next) {
+  return knex('book').select().where({id: req.params.id}).first().then(function (book) {
+    res.render('bookdetail', {book: book})
+  });
+});
+
 module.exports = router;
