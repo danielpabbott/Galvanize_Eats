@@ -23,9 +23,19 @@ router.get('/addbook', function(req, res, next) {
   res.render('addbook');
 })
 
-router.post('/post', function(req, res, next) {
+router.post('/newbook', function(req, res, next) {
 	return knex('book').insert(req.body).then(function() {
 		res.redirect('books');
+	});
+});
+
+router.get('/addauthor', function(req, res, next) {
+  res.render('addauthor');
+})
+
+router.post('/newauthor', function(req, res, next) {
+	return knex('author').insert(req.body).then(function() {
+		res.redirect('authors');
 	});
 });
 
