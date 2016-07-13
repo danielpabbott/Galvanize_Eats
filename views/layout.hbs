@@ -9,17 +9,23 @@
   <body>
     <div class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper">
-          <a href="/" class="brand-logo indent"><img src="/images/logo.png"></a>
-          <ul class="right hide-on-med-and-down navtext">
-            <li><a href="/authors">Authors</a></li>
-            <li><a href="/books">Books</a></li>
-          </ul>
-        </div>
-      </nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><img src="/images/logo.png"></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/authors">Authors</a></li>
+        <li><a href="/books">Books</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/authors">Authors</a></li>
+        <li><a href="/books">Books</a></li>
+      </ul>
+    </div>
+  </nav>
     </div>
     {{{body}}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   </body>
 </html>
