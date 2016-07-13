@@ -57,6 +57,12 @@ router.get('/:id/detailbook', function(req, res, next) {
   });
 });
 
+router.get('/:id/detailauthor', function(req, res, next) {
+  return knex('author').select().where({id: req.params.id}).first().then(function (author) {
+    res.render('detailauthor', {author: author})
+  });
+});
+
 router.get('/:id/editbook', function(req, res, next) {
   return knex('book').select().where({id: req.params.id}).first().then(function (book) {
     res.render('editbook', {book: book})

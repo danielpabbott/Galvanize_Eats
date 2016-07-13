@@ -1,0 +1,20 @@
+<div class="row detail">
+  <div class="col m2 offset-m1">
+    <img src="{{author.portrait_url}}" class="detailimg">
+  </div>
+  <div class="col m6 offset-m2">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"><h5>{{author.first_name}} {{author.last_name}}</h5></span>
+        <p>{{author.biography}}</p>
+      </div>
+      <div class="card-action">
+        <a href="/{{author.id}}/authoredit">Edit Details</a>
+        <a href="/{{author.id}}/authordelete" class="right">Delete {{author.first_name}} {{author.last_name}}</a>
+      </div>
+    </div>
+    <div class="card-action">
+      <a href="/authors">Back to Authors</a>
+    </div>
+  </div>
+</div>
