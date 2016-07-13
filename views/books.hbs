@@ -1,0 +1,18 @@
+<div class='row'>
+  {{#each book}}
+    <div class='col m3'>
+      <div class="card">
+        <div class="card-image">
+          <img src="{{this.cover_url}}">
+          <span class="card-title">{{this.title}}</span>
+        </div>
+        <div class="card-content">
+
+        </div>
+        <div class="card-action">
+          <a href="#">Details</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
