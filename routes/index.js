@@ -13,6 +13,12 @@ router.get('/books', function(req, res, next) {
   })
 })
 
+router.get('/authors', function(req, res, next) {
+  return knex('author').select().then(function(author) {
+    res.render('authors', {author: author})
+  })
+})
+
 router.get('/addbook', function(req, res, next) {
   res.render('addbook');
 })

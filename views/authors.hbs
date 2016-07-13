@@ -1,0 +1,22 @@
+<div class='row books'>
+  {{#each author}}
+    <div class='col m3'>
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator height" src="{{this.portrait_url}}">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i>{{this.first_name}} {{this.last_name}}</span>
+          <p><a href="/{{this.id}}/authordetail">More Info</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{this.first_name}} {{this.last_name}}<i class="material-icons right">close</i></span>
+          <p>{{this.biography}}</p>
+          <a href="/{{this.id}}/authoredit">Edit Profile</a>
+          <a href="/{{this.id}}/authordelete" class="right">Delete</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+<a class="waves-effect waves-light btn" href='/addbook'>Add an Author</a>
