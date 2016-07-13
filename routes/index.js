@@ -45,6 +45,12 @@ router.get('/:id/bookdelete', function(req, res, next) {
   })
 });
 
+router.get('/:id/authordelete', function(req, res, next) {
+  knex('author').where({id: req.params.id}).del().then(function() {
+  res.redirect('/authors')
+  })
+});
+
 router.get('/:id/bookdetail', function(req, res, next) {
   return knex('book').select().where({id: req.params.id}).first().then(function (book) {
     res.render('bookdetail', {book: book})
