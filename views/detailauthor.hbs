@@ -1,4 +1,4 @@
-<div class="row detail">
+<div class="row top">
   <div class="col m2 offset-m1">
     <img src="{{author.portrait_url}}" class="detailimg">
   </div>
@@ -9,12 +9,20 @@
         <p>{{author.biography}}</p>
       </div>
       <div class="card-action">
-        <a href="/{{author.id}}/authoredit">Edit Details</a>
-        <a href="/{{author.id}}/authordelete" class="right">Delete {{author.first_name}} {{author.last_name}}</a>
+        <div class="row">
+          <div class="col m4 left">
+            <a href="/{{author.id}}/editauthor"><i class="material-icons">mode_edit</i></a>
+          </div>
+          <div class="col m4 center">
+            <a href="/authors">Back to Authors</a>
+          </div>
+          <div class="col m4 right">
+            <a href="/{{author.id}}/deleteauthor" class="right"><i class="material-icons">delete</i></a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card-action">
-      <a href="/authors">Back to Authors</a>
+    <div class="card-action center">
     </div>
   </div>
 </div>

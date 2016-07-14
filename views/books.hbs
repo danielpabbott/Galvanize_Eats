@@ -1,4 +1,12 @@
-<div class='row books'>
+<div class="row top">
+  <div class="col m3 offset-m3 center">
+    <h3>Books</h3>
+  </div>
+  <div class="col m3 center">
+    <a class="btn-floating btn-large waves-effect waves-light orange accent-3" href="/addbook"><i class="material-icons">add</i></a>
+  </div>
+</div>
+<div class='row'>
   {{#each book}}
     <div class='col m3'>
       <div class="card">
@@ -13,11 +21,19 @@
           <span class="card-title grey-text text-darken-4">{{this.title}}<i class="material-icons right">close</i></span>
           <p>{{this.genre}}</p>
           <p>{{this.description}}</p>
-          <a href="/{{this.id}}/editbook">Edit Details</a>
-          <a href="/{{this.id}}/deletebook" class="right">Delete</a>
+          <div class="row">
+            <div class="col m4 left">
+              <a href="/{{this.id}}/editbook"><i class="material-icons">mode_edit</i></a>
+            </div>
+            <div class="col m4 center">
+              <a href="/{{this.id}}/detailbook">Details</a>
+            </div>
+            <div class="col m4 right">
+              <a href="/{{this.id}}/deletebook" class="right"><i class="material-icons">delete</i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   {{/each}}
 </div>
-<a class="waves-effect waves-light btn" href='/addbook'>Add a Book</a>

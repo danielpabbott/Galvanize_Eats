@@ -2,7 +2,7 @@
   height: 55vh;
 }
 
-.landing {
+.top {
   padding-top: 50px;
 }
 
@@ -11,13 +11,10 @@
   margin-right: 50px;
 }
 
-.books {
-  padding-top: 50px;
-}
-.detail {
-  padding-top: 50px;
-}
-
 .detailimg {
   height: 65vh;
+}
+
+.enter {
+  width: 50vw;
 }

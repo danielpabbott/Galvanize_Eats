@@ -53,7 +53,7 @@ router.get('/:id/deleteauthor', function(req, res, next) {
 
 router.get('/:id/detailbook', function(req, res, next) {
   return knex('book').select().where({id: req.params.id}).first().then(function (book) {
-    res.render('bookdetail', {book: book})
+    res.render('detailbook', {book: book})
   });
 });
 

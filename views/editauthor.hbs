@@ -1,4 +1,7 @@
-<h4 class="indent">Add an Author</h4>
+<div class="container enter">
+  <div class="row center">
+    <h4 class="indent">Edit {{author.first_name}} {{author.last_name}}</h4>
+  </div>
 <div class="row">
     <form class="col s12" action="/{{author.id}}/editauthor" method="post">
       <div class="row">
@@ -24,9 +27,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s12 center">
           <input id="submit" type="submit" value="Update">
         </div>
       </div>
     </form>
+    <div class="col m4 offset-m4 center">
+      <a href="/authors">Back to Authors</a>
+    </div>
   </div>
