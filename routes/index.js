@@ -4,7 +4,7 @@ var knex = require('../db/knex');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 router.get('/books', function(req, res, next) {
@@ -52,10 +52,17 @@ router.get('/:id/deleteauthor', function(req, res, next) {
 });
 
 router.get('/:id/detailbook', function(req, res, next) {
-  return knex('book').select().where({id: req.params.id}).first().then(function (book) {
-    res.render('detailbook', {book: book})
+  return Promise.all([
+    knex('author').select().join('book_author', 'book_author.author_id', 'author.id').where({'author_id': req.params.id}),
+    knex('book').select().where({id: req.params.id}).first()
+  ]).then(function (data) {
+    console.log(data);
+    res.render('detailbook', {author: data[0], book: data[1]})
+  }).catch(function(error) {
+    next(error);
   });
-});
+})
+
 
 router.get('/:id/detailauthor', function(req, res, next) {
   return knex('author').select().where({id: req.params.id}).first().then(function (author) {
